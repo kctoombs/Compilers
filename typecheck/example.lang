@@ -1,0 +1,60 @@
+procedure Main() return integer {
+   procedure foo(x: integer; ch: char; bool: boolean) return char {
+     var i: integer;
+     var v: integer;
+     var c: char;
+     var p: intptr;
+     var b: boolean;
+     var cp: charptr;
+     var cp2: charptr;
+          
+     b = true;
+     i = -7;
+     c = 'F';
+     cp = &c;
+     p = &i;
+     v = ^p;
+     i = ^p + 4;
+     i = ^p + ^p;
+     cp2 = cp + 5;
+     if(b){
+       var v: integer;
+       i = 2;
+       c = 'a';
+     }
+
+      return c;
+   }
+  
+  procedure two() return char{
+   var i: integer;
+   var c: char;
+   if(!true){
+     c = 'j';
+   }
+   while(i != 3){
+     i = 7;
+   }
+   return 'z';
+  }
+
+  procedure three() return char{
+    var c: char;
+    var cp: charptr;
+    var i: integer;
+    var s: string[5];
+    var ch: char;
+    var b: boolean;
+    var b1: boolean;
+    c = foo(7, ch, b);
+    /%ch = s[i];
+    b = !b1;
+    i = |s|;
+    cp = &s[2];
+    ch = ^cp;%/
+    i = |i|;
+    return c;
+  }
+
+    return 0;
+}

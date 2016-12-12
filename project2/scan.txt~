@@ -1,0 +1,17 @@
+procedure foo() return integer
+{
+if(true){
+	if(false){
+	y = 2;
+	x[5] = 'b';
+	w = 55;
+	}
+	else{
+
+}
+x = 5;
+} 
+
+    return 0;
+}
+

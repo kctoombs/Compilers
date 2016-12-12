@@ -1,0 +1,48 @@
++-- Symbol Scope ---
+| Main 
++-------------
+
+	+-- Symbol Scope ---
+	| three 
+	| two 
+	| foo 
+	+-------------
+
+		+-- Symbol Scope ---
+		| cp2 
+		| cp 
+		| b 
+		| v 
+		| p 
+		| c 
+		| x 
+		| ch 
+		| bool 
+		| i 
+		+-------------
+
+			+-- Symbol Scope ---
+			| v 
+			+-------------
+
+		+-- Symbol Scope ---
+		| c 
+		| i 
+		+-------------
+
+			+-- Symbol Scope ---
+			+-------------
+
+			+-- Symbol Scope ---
+			+-------------
+
+		+-- Symbol Scope ---
+		| b1 
+		| ch 
+		| b 
+		| cp 
+		| i 
+		| c 
+		| s 
+		+-------------
+

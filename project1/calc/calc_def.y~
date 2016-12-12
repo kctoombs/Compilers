@@ -1,0 +1,65 @@
+
+%{
+	#include <stdio.h>
+	int yylex(void);
+	void yyerror(char *);
+%}
+
+
+%%
+
+ /*List : List Expr '.' {printf("parsed expresion\n");}
+     | Expr '.' {printf("parsed expresion\n");}
+     ;
+ */
+
+List : Expr '.' ListP //{printf("parsed expresion\n");}
+     ;
+
+ListP : Expr '.' ListP //{printf("parsed expresion\n");}
+      :
+      ;
+
+Expr : Term ExP
+     ;
+
+ExP  : '+' Term ExP
+     | '-' Term ExP
+     |
+     ;
+
+Term : Fact TeP
+     ;
+
+TeP  : '*' Fact TeP
+     | '%' Fact TeP
+     |
+     ;
+
+Fact : 'n'
+     | '(' Expr ')'
+     ;
+
+ /*List    : List Expr '.' {printf("parsed expresion\n");}
+	| Expr '.' {printf("parsed expresion\n");}
+        ;
+
+Expr    : Expr '*' Expr 
+        | Expr '+' Expr 
+        | Expr '-' Expr
+        | Expr '%' Expr
+        | 'n'
+        | '(' Expr ')'
+        ;
+ */
+%%
+
+void yyerror(char *s) {
+	fprintf(stderr, "%s\n", s);
+	return;
+}
+
+int main(void) {
+	yyparse();
+	return 0;
+}
