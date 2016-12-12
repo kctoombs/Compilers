@@ -1,0 +1,58 @@
+procedure foo(i, j, k : integer; l, m, n : boolean) return integer{
+
+
+    procedure square(t : integer) /% procedure declarations %/ return integer
+    {
+        var temp : integer;
+        temp = t* t;
+        return 0;
+    }
+
+
+var x : charptr;    /% x is a pointer to a character variable %/
+var x, z : integer;
+var y    : intptr;
+var i : integer;
+var m, n : boolean;
+var c : char;
+var s : string[20];
+
+
+x = 5;
+y = &x;     /% We take the address of x and assign it to y.
+               As a result, y points to x, which is 5. %/
+x = 6;      /% y still points to x, which is 6 now %/
+z = ^y;     /% Dereference y, and assign to z the value that y points to (which is 6). %/
+y = null; 
+
+c = 'e';
+a[19] = 'f';
+a[4+2] = 'g';
+b = a;
+b[3] = c;
+a = "test";   /% basically equivalent to a[0] = 't'; a[1] = 'e'; a[2] = 's'; a[3] = 't'; a[4] = '\0'; %/ 
+i = |s|;  
+
+if(3 > 2)
+{
+    /%...statements...%/
+if(3 > 2)
+{
+if(3 > 2)
+{
+    /%...statements...%/
+    i = 5; /% i has been declared above%/
+}
+    /%...statements...%/
+    i = 5; /% i has been declared above%/
+}
+    i = 5; /% i has been declared above%/
+}
+if(true) { j = 3; }
+else { k = 4; }
+while(true) { l = 2; }
+
+
+
+return 0;
+}
